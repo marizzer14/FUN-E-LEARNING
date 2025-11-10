@@ -1,363 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Fun-E-Learning</title>
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viducation - Fun-E-Learning</title>
+    <link rel="stylesheet" href="Viducation.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="viducation-page">
     <div class="interactive-bg">
-        <div class="bg-circle bg-circle1"></div>
-        <div class="bg-circle bg-circle2"></div>
-        <div class="bg-circle bg-circle3"></div>
-        <div class="bg-circle bg-circle4"></div>
-        <div class="bg-circle bg-circle5"></div>
-        <div class="bg-circle bg-circle6"></div>
+        <!-- Yellow themed background circles -->
+        <div class="yellow-bg-circle yellow-bg-circle1"></div>
+        <div class="yellow-bg-circle yellow-bg-circle2"></div>
+        <div class="yellow-bg-circle yellow-bg-circle3"></div>
+        <div class="yellow-bg-circle yellow-bg-circle4"></div>
+        <div class="yellow-bg-circle yellow-bg-circle5"></div>
+        <div class="yellow-bg-circle yellow-bg-circle6"></div>
     </div>
-    
-    <header>
-        <nav class="nav-bar">
-            <div class="logo">
-                <a href="">
-                <img class="mainlogo" src="imgs/MainLogo.png" alt="Logo" onclick="location.reload()" />
-                </a>
-            </div>
-            <div class="nav-items">
-                <ul class="nav-right">
-                    <li><a href="#aboutus" class="nav-link">About Us</a></li>
-                    <li><a href="#products" class="nav-link">Products</a></li>
-                    <li><a href="#management" class="nav-link">Management</a></li>
-                    <li><a href="#fun-e-exam" class="nav-link">Fun-E-Xam</a></li>
-                    <li><a href="#contactus" class="nav-link">Contact Us</a></li>
-                </ul>
-            </div>
+
+    <!-- Viducation Header -->
+    <header class="viducation-header">
+        <nav class="viducation-nav">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+            <ul class="viducation-menu">
+                <li><a href="#short-stories" class="nav-item active" data-section="short-stories">Short Stories</a></li>
+                <li><a href="#soft-skill" class="nav-item" data-section="soft-skill">Soft Skill</a></li>
+                <li><a href="#call-center" class="nav-item" data-section="call-center">Call Center</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <div class="main-container" id="home">
-            <div class="bgs">
-                <img class="bg1" src="imgs/HomeBG1.png" alt="Background"/>
+    <!-- Main Content -->
+    <main class="viducation-content">
+        <!-- Short Stories Section -->
+        <section id="short-stories" class="section-content active">
+            <h2 class="section-title">Viducation Short Stories</h2>
+            <p class="section-description">
+                Interesting and short stories designed to build the characters of the learners. 
+                The lessons are expected to give the learners a better appreciation of themselves and others.
+            </p>
+            
+            <!-- Short Stories Gallery Header -->
+            <div class="gallery-header">
+                <h3 class="gallery-title">Character Building Stories</h3>
+                <p class="gallery-subtitle">Engaging narratives that teach important life lessons and values</p>
             </div>
-        </div>
-
-        <!-- About Us Section -->
-        <div class="main-container">
-            <section class="aboutus-container" id="aboutus">
-                <div class="aboutus-content">
-                    <div class="aboutus-hero">
-                        <img src="imgs/F.element.png" alt="About Us Hero"/>
-                    </div>
-                    <div class="aboutus-text">
-                        <h1 class="aboutus-heading">About Us</h1>
-                        <p>
-                            Fun-e-Learning Corporation is a locally SEC registered corporation 
-                            created to bring out the best from Filipino learners.  
-                            <br>Taking advantage of the expertise and experience of the 
-                            people of Fun-e-Learning, we created educational materials for the Filipino learners.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <!-- Mission / Vision Section -->
-        <div class="main-container">
-            <div class="mission-vision-container">
-                <h2 class="mission-vision-title">MISSION / VISION</h2>
-                <p class="mission-vision-text">
-                    The mission of Fun-e-Learning is to provide the Filipino learners with video materials useful to their growth and applicable to their daily lives.<br><br>
-                    The vision of Fun-e-Learning is to have a significant part in making the Filipinos among the top learners in the world.
-                </p>
+            
+            <!-- Short Stories Gallery - Currently Empty -->
+            <div class="empty-gallery">
+                <div class="empty-gallery-icon">📚</div>
+                <h3 class="empty-gallery-title">Stories Coming Soon!</h3>
+                <p class="empty-gallery-text">We're preparing wonderful stories that will inspire and teach valuable lessons.</p>
+                <p class="empty-gallery-text">Check back soon for our collection of character-building narratives.</p>
             </div>
-        </div>
+        </section>
 
-        <!-- Products & Services Section -->
-        <div class="main-container">
-            <section class="products-container" id="products">
-                <h1 class="products-title">PRODUCTS AND SERVICES</h1>
-                <div class="products-grid">
-                    <!-- Viducation Card with Nested Dropdowns -->
-                    <div class="product-card" data-card="viducation">
-                        <div class="card-header">
-                            <div class="card-icon">📚</div>
-                            <h2 class="card-title">Viducation</h2>
-                            <div class="card-arrow">↓</div>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-tagline">A digital library with a purpose of bringing out the best in Filipino learners.</p>
-                            <div class="card-details">
-                                <p>Viducation comes in several groups, namely:</p>
-                                
-                                <!-- Nested Accordion for Viducation -->
-                                <div class="nested-accordion">
-                                    <!-- Viducation Short Stories -->
-                                    <div class="nested-accordion-item">
-                                        <div class="nested-accordion-header">
-                                            <span class="nested-accordion-arrow">→</span>
-                                            <h3>Viducation Short Stories</h3>
-                                        </div>
-                                        <div class="nested-accordion-content">
-                                            <p>These are interesting and short stories designed to build the characters of the learners. The lessons are expected to give the learners a better appreciation of themselves and others.</p>
-                                        </div>
-                                    </div>
+        <!-- Soft Skill Section -->
+        <section id="soft-skill" class="section-content">
+            <h2 class="section-title">Viducation Soft Skill</h2>
+            <p class="section-description">
+                Video materials created to enhance the personality of the learners and develop essential interpersonal skills.
+            </p>
+            
+            <!-- Soft Skill Gallery Header -->
+            <div class="gallery-header">
+                <h3 class="gallery-title">Personal Development Videos</h3>
+                <p class="gallery-subtitle">Build essential skills for personal and professional success</p>
+            </div>
+            
+            <!-- Soft Skill Gallery - Currently Empty -->
+            <div class="empty-gallery">
+                <div class="empty-gallery-icon">💼</div>
+                <h3 class="empty-gallery-title">Skills Development Coming Soon!</h3>
+                <p class="empty-gallery-text">We're creating comprehensive soft skills training videos to help you excel.</p>
+                <p class="empty-gallery-text">Stay tuned for communication, leadership, and emotional intelligence content.</p>
+            </div>
+        </section>
 
-                                    <!-- Viducation Soft Skill -->
-                                    <div class="nested-accordion-item">
-                                        <div class="nested-accordion-header">
-                                            <span class="nested-accordion-arrow">→</span>
-                                            <h3>Viducation Soft Skill</h3>
-                                        </div>
-                                        <div class="nested-accordion-content">
-                                            <p>These are video materials created to enhance the personality of the learners.</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Viducation Call Center -->
-                                    <div class="nested-accordion-item">
-                                        <div class="nested-accordion-header">
-                                            <span class="nested-accordion-arrow">→</span>
-                                            <h3>Viducation Call Center</h3>
-                                        </div>
-                                        <div class="nested-accordion-content">
-                                            <p>In 2024, 40% of grade 12 learners will not proceed to college upon graduation. To address this concern, we created learning tools designed to prepare these students be qualified as BPO employees. More so, we made arrangement with the leading BPO companies to consider them for employment after they completed Senior High School.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                                <div class="product-image-space">
-                                    <div class="image-placeholder">
-                                        <img src="Products/Viducation.jpg" alt="Viducation" class="accordion-img"/>
-                                    </div>
-                                </div>
-                          
-                                <div class="viducation-button-container">
-                                    <a href="Viducation.html" class="viducation-page-btn">Viducation Page</a>
-                                </div>
-                                
-                            </div>
-                        </div>
+        <!-- Call Center Section -->
+        <section id="call-center" class="section-content">
+            <h2 class="section-title">Viducation Call Center</h2>
+            <p class="section-description">
+                Comprehensive training programs designed to prepare students for successful careers in the BPO industry, 
+                with direct pathways to employment opportunities.
+            </p>
+            
+            <!-- Call Center Gallery Header -->
+            <div class="gallery-header">
+                <h3 class="gallery-title">Call Center Training Videos</h3>
+                <p class="gallery-subtitle">Master essential English grammar and communication skills for BPO success</p>
+            </div>
+            
+            <!-- Call Center Gallery - With Actual Videos and Thumbnails -->
+            <div class="video-gallery">
+                <!-- Video 1 -->
+                <div class="video-card" data-video-id="bpo-orientation" 
+                   data-video-src="https://drive.google.com/file/d/1ABC123def456/view?usp=sharing">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/BPO.png')">
+                        <div class="play-icon"></div>
                     </div>
-
-                    <!-- Fun-e-ducation Card -->
-                    <div class="product-card" data-card="funeducation">
-                        <div class="card-header">
-                            <div class="card-icon">🎓</div>
-                            <h2 class="card-title">Fun-e-ducation</h2>
-                            <div class="card-arrow">↓</div>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-tagline">Educational face-to-face seminars structured to improve important skills.</p>
-                            <div class="card-details">
-                                <p>Some among the subjects of this program are confidence building, job interview tips, effective resume preparation, and many more.</p>
-                                
-                                <!-- Image Space for Fun-e-ducation -->
-                                <div class="product-image-space">
-                                    <div class="image-placeholder">
-                                        <img src="Products/Fun-e-ducation.jpg" alt="Fun-e-ducation" class="accordion-img"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fun-e-Xam Card -->
-                    <div class="product-card" data-card="funexam">
-                        <div class="card-header">
-                            <div class="card-icon">📊</div>
-                            <h2 class="card-title">Fun-e-Xam</h2>
-                            <div class="card-arrow">↓</div>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-tagline">Online assessments created to measure the amount of learnings the learners have gathered.</p>
-                            <div class="card-details">
-                                <p>Comprehensive assessment tools designed to track and measure learning progress through interactive online evaluations.</p>
-                                
-                                <!-- Image Space for Fun-e-Xam -->
-                                <div class="product-image-space">
-                                    <div class="image-placeholder">
-                                        <img src="Products/fun-e-xam.jpg" alt="fun-e-exam" class="accordion-img"/> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="video-info">
+                        <h4 class="video-title">BPO & Call Center Orientation</h4>
+                        <span class="video-duration">17:14</span>
+                        <p class="video-description">Introduction to BPO industry and call center operations overview.</p>
                     </div>
                 </div>
-            </section>
-        </div>
-                                                                                
-        <!-- Management Section -->
-        <div class="main-container">
-            <section class="management-container" id="management">
-                <h1 class="management-title">Our Management Team</h1>
-                <div class="management-list">
-                    <!-- Ronald Abeleda Card -->
-                    <div class="manager-card accordion-item">
-                       <div class="initial-manager-card">
-                        <div class="manager-image-container">
-                            <img src="Management/TeamProfile/ID.Pic(RonaldAbeleda).jpg" alt="Ronald B. Abeleda" class="manager-image">
-                        </div>
-                        <div class="accordion-header">
-                            <span class="accordion-arrow">→</span>
-                            <span class="manager-name">Ronald B. Abeleda</span>
-                        </div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="management-details">
-                                <h3 class="card-title">Chief Marketing Officer, MBA</h3>
-                                <p class="card-subtitle">Marketing & Business Development</p>
-                                <div class="manager-description">
-                                    <p><b>Ronald B. Abeleda, MBA.</b> Chief Marketing Officer, his impressive marketing experience here and abroad, shall be instrumental in the success of the organization. Ronald is also known for providing excellent marketing seminars and trainings in the Academic, BPO, IT, Real Estate, Health and other industries. Ronald accomplished his BS in Accountancy in University of Manila, took his Local Area Networking in Ateneo, finished his RCFE in Administration in JMPM, California, and acquired his MBA in Trece Martirez College.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Joey Livelo Card -->
-                    <div class="manager-card accordion-item">
-                        <div class="manager-image-container">
-                            <img src="Management/TeamProfile/ID.Pic(Joey).jpeg" alt="Joey Livelo" class="manager-image">
-                        </div>
-                        <div class="accordion-header">
-                            <span class="accordion-arrow">→</span>
-                            <span class="manager-name">Joey Livelo</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="management-details">
-                                <h3 class="card-title">Chief Operating Officer</h3>
-                                <p class="card-subtitle">Operations & Business Strategy</p>
-                                <div class="manager-description">
-                                    <p><b>Felino (Joey) D. Livelo.</b> Chief Operating Officer, Known for his excellence in running businesses and operations, Joey is expected to play an important role in the success of the company. He finished his studies with excellent result, making it as the salutatorian and valedictorian in elementary and high school respectively. Joey excelled in his college at DLSU Manila, consistently included in the dean's list. Joey offered his services as the national president to Jaycess (Junior Chamber National Philippines) in 1995.</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Video 2 -->
+                <div class="video-card" data-video-id="noun-1" data-video-src="Viducation/CallCenterVideos/NOUN 1.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/NOUN1.png')">
+                        <div class="play-icon"></div>
                     </div>
-
-                    <!-- Roy Asi Card -->
-                    <div class="manager-card accordion-item">
-                        <div class="manager-image-container">
-                            <img src="Management/TeamProfile/ros_profile.svg" alt="Roy Asi" class="manager-image">
-                        </div>
-                        <div class="accordion-header">
-                            <span class="accordion-arrow">→</span>
-                            <span class="manager-name">Roy Asi</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="management-details">
-                                <h3 class="card-title">Chief Finance Officer</h3>
-                                <p class="card-subtitle">Finance & Technology Innovation</p>
-                                <div class="manager-description">
-                                    <p><b>Roy Noel A. Asi</b>, Chief Finance Officer, accomplished and experience businessman, Roy's contribution shall be instrumental as the company pursue its goal. Roy is also creative and innovative. He is among who pioneered several technology in the industry. Roy excelled his Electronic Communications Engineering at De Lasalle University, Manila.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Nouns - Part 1</h4>
+                        <span class="video-duration">03:04 </span>
+                        <p class="video-description">Introduction to nouns and their different kinds in English grammar.</p>
                     </div>
                 </div>
-            </section>
-        </div>
 
-        <!-- Fun-E-Xam Section -->
-        <div class="main-container">
-            <section class="fun-e-exam-section" id="fun-e-exam">
-                <div class="coming-soon-container">
-                    <div class="coming-soon-icon-wrapper">
-                        <img src="imgs/F.element.png" alt="About Us Icon" class="coming-soon-icon">
+                <!-- Video 3 -->
+                <div class="video-card" data-video-id="noun-2" data-video-src="Viducation/CallCenterVideos/NOUN 2.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/NOUN2.png')">
+                        <div class="play-icon"></div>
                     </div>
-                    <h1 class="coming-soon-title">Soon to be Available</h1>
-                    <p class="coming-soon-desc">We're working hard to bring you this feature. Stay tuned for updates!</p>
+                    <div class="video-info">
+                        <h4 class="video-title">Nouns - Part 2</h4>
+                        <span class="video-duration">04:19</span>
+                        <p class="video-description">Types of nouns: singular, plural, regular, irregular, countable, uncountable.</p>
+                    </div>
                 </div>
-            </section>
-        </div>
 
-        <!-- Contact Us Section -->
-        <div class="main-container">
-            <section class="contactus-container" id="contactus">
-                <h1 class="contactus-title">Contact Us</h1>
-                <div class="contactus-details">
-                    <p>Email: <a href="mailto:ronald.abeleda@fun-e-learning.com">ronald.abeleda@fun-e-learning.com</a></p>
-                    <p>YouTube: <a href="https://fun-e-learning.com" target="_blank">fun-e-learning.com</a></p>
+                <!-- Video 4 -->
+                <div class="video-card" data-video-id="pronoun" data-video-src="Viducation/CallCenterVideos/Pronoun.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/PRONOUN.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Pronouns</h4>
+                        <span class="video-duration">03:45</span>
+                        <p class="video-description">Understanding pronouns and their usage in English communication.</p>
+                    </div>
                 </div>
-            </section>
-        </div>
+
+                <!-- Video 5 -->
+                <div class="video-card" data-video-id="verb" data-video-src="Viducation/CallCenterVideos/Verb_.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/VERB.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Verbs</h4>
+                        <span class="video-duration">03:51</span>
+                        <p class="video-description">Comprehensive guide to verbs and their functions in sentences.</p>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card" data-video-id="adverb" data-video-src="Viducation/CallCenterVideos/Adverb.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/ADVERBS.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Adverbs</h4>
+                        <span class="video-duration">03:15</span>
+                        <p class="video-description">Understanding adverbs and how they modify verbs in communication.</p>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="video-card" data-video-id="adjectives" data-video-src="Viducation/CallCenterVideos/Adjectives_.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/ADJECTIVE.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Adjectives</h4>
+                        <span class="video-duration">03:17</span>
+                        <p class="video-description">Learn about adjectives and how they describe nouns effectively.</p>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div class="video-card" data-video-id="idioms-1" data-video-src="Viducation/CallCenterVideos/IDIOMS 1.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/IDIOM1.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Idioms - Part 1</h4>
+                        <span class="video-duration">06:14</span>
+                        <p class="video-description">First part of common idiomatic expressions used in English.</p>
+                    </div>
+                </div>
+
+                <!-- Video 9 -->
+                <div class="video-card" data-video-id="idioms-2" data-video-src="Viducation/CallCenterVideos/IDIOMS 2.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/IDIOM2.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Idioms - Part 2</h4>
+                        <span class="video-duration">05:32</span>
+                        <p class="video-description">Second part of idiomatic expressions and their practical usage.</p>
+                    </div>
+                </div>
+
+                <!-- Video 10 -->
+                <div class="video-card" data-video-id="has-have" data-video-src="Viducation/CallCenterVideos/HAS VS HAVE.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/HAVE ans HAS.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Has vs Have</h4>
+                        <span class="video-duration">03:12</span>
+                        <p class="video-description">Proper usage of 'has' and 'have' in different contexts.</p>
+                    </div>
+                </div>
+
+                <!-- Video 11 -->
+                <div class="video-card" data-video-id="do-does" data-video-src="Viducation/CallCenterVideos/Do vs Does.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/DO and DOES.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Do vs Does</h4>
+                        <span class="video-duration">04:18</span>
+                        <p class="video-description">Understanding when to use 'do' and 'does' correctly.</p>
+                    </div>
+                </div>
+
+                <!-- Video 12 -->
+                <div class="video-card" data-video-id="in-at-on" data-video-src="Viducation/CallCenterVideos/IN, AT, ON.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/IN, AT, ON.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">In, At, On</h4>
+                        <span class="video-duration">02:41</span>
+                        <p class="video-description">Correct usage of prepositions 'in', 'at', and 'on' in sentences.</p>
+                    </div>
+                </div>
+
+                <!-- Video 13 -->
+                <div class="video-card" data-video-id="to-for" data-video-src="Viducation/CallCenterVideos/To_For.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/TO and FOR.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">To vs For</h4>
+                        <span class="video-duration">01:52</span>
+                        <p class="video-description">Differentiating between 'to' and 'for' in various contexts.</p>
+                    </div>
+                </div>
+
+                <!-- Video 14 -->
+                <div class="video-card" data-video-id="f-vs-p" data-video-src="Viducation/CallCenterVideos/F vs P.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/F and P.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">F vs P Pronunciation</h4>
+                        <span class="video-duration">03:59</span>
+                        <p class="video-description">Mastering the pronunciation difference between 'F' and 'P' sounds.</p>
+                    </div>
+                </div>
+
+                <!-- Video 15 -->
+                <div class="video-card" data-video-id="th" data-video-src="Viducation/CallCenterVideos/TH.mp4">
+                    <div class="video-thumbnail has-thumbnail" style="background-image: url('Viducation/CallCenterVideos/THUMBNAILS/TH.png')">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">TH Pronunciation</h4>
+                        <span class="video-duration">03:39</span>
+                        <p class="video-description">Proper usage and pronunciation of the 'TH' sound in English.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="imgs/mainlogo.png" alt="Footer Logo" />
-                <span>Fun-E-Learning</span>
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-video-container">
+                <!-- Video player will be inserted here -->
             </div>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#management">Management</a>
-                <a href="#fun-e-exam">Fun-E-Xam</a>
-                <a href="#contactus">Contact Us</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://fun-e-learning.com" target="_blank">🌐</a>
-                <a href="mailto:ronald.abeleda@fun-e-learning.com">✉️</a>
-            </div>
-            <div class="footer-quote">
-                "BRINGING THE BEST IN YOU."
-            </div>
-            <div class="footer-contact">
-                <div>Address: 4th Floor, Cattleya Condominium, 235 Salcedo St., Legaspi Village, Makati City</div>
-                <div>Telephone: (6327) 586-1754</div>
-                <div>Website: <a href="https://www.fun-e-learning.com" target="_blank">www.fun-e-learning.com</a></div>
-            </div>
-            <div class="footer-copy">
-                &copy; 2025 FUN-E-LEARNING. All rights reserved.
+            <div class="modal-video-info">
+                <h3 id="modalVideoTitle" class="modal-video-title"></h3>
+                <p id="modalVideoDescription" class="modal-video-description"></p>
             </div>
         </div>
-    </footer>
-
-    <div class="swirl-bg">
-        <svg class="swirl-svg swirl1" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
-                stroke="#90caf9" stroke-width="18" fill="none" filter="url(#glow1)" />
-            <defs>
-                <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-        </svg>
-        <svg class="swirl-svg swirl2" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
-                stroke="#b3c2d6" stroke-width="18" fill="none" filter="url(#glow2)" />
-            <defs>
-                <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-        </svg>
-        <svg class="swirl-svg swirl3" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M40,130 Q130,40 220,130 Q130,220 40,130 Z"
-                stroke="#ffe0b2" stroke-width="12" fill="none" filter="url(#glow3)" />
-            <defs>
-                <filter id="glow3" x="-20%" y="-20%" z="1%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-        </svg>
     </div>
-    
-    <!-- Only include script.js once -->
-    <script src="script.js"></script>
+
+    <script src="Viducation.js"></script>
 </body>
 </html>
