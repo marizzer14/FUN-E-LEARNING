@@ -53,6 +53,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+// Fix for Viducation page button clickability - SIMPLIFIED VERSION
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove all existing event listeners and use simple link
+    const viducationButtons = document.querySelectorAll('.viducation-page-btn');
+    
+    viducationButtons.forEach(button => {
+        // Remove any existing event listeners by cloning
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        // Let the native link behavior work normally
+        newButton.addEventListener('click', function(e) {
+            console.log('Viducation button clicked - allowing default behavior');
+            // Don't prevent default - let the link work naturally
+        });
+    });
+});
+
+    // Debug Viducation button
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('viducation-page-btn') || 
+        e.target.closest('.viducation-page-btn')) {
+        console.log('Viducation button clicked');
+        console.log('Button href:', e.target.href);
+        console.log('Default prevented?', e.defaultPrevented);
+    }
+});
+
     
     console.log('Viducation navigation initialized successfully');
 });
@@ -281,4 +310,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log('Video gallery with thumbnails initialized');
+
 });
