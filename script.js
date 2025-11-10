@@ -96,10 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Logo reload functionality
-    document.querySelector('.mainlogo').addEventListener('click', function(e) {
-        e.preventDefault();
-        location.reload();
-    });
+    const mainLogo = document.querySelector('.mainlogo');
+    if (mainLogo) {
+        mainLogo.addEventListener('click', function(e) {
+            e.preventDefault();
+            location.reload();
+        });
+    }
     
     console.log('Navigation initialized');
 });
@@ -121,6 +124,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const productCards = document.querySelectorAll('.product-card');
     const productsGrid = document.querySelector('.products-grid');
+    
+    if (!productCards.length || !productsGrid) {
+        console.log('No product cards found');
+        return;
+    }
     
     productCards.forEach(card => {
         // Add tabindex for accessibility
@@ -219,6 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const managementAccordions = document.querySelectorAll('.manager-card.accordion-item');
     
+    if (!managementAccordions.length) {
+        console.log('No management accordions found');
+        return;
+    }
+    
     managementAccordions.forEach(accordion => {
         const header = accordion.querySelector('.accordion-header');
         const arrow = accordion.querySelector('.accordion-arrow');
@@ -232,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set initial state
         content.style.maxHeight = '0px';
         content.style.opacity = '0';
+        content.style.overflow = 'hidden';
         arrow.textContent = '→';
         
         header.addEventListener('click', function(e) {
@@ -242,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Close all other management accordions
             managementAccordions.forEach(otherAccordion => {
-                if (otherAccordion !== accordion) {
+                if (otherAccordion !== accordion && otherAccordion.classList.contains('active')) {
                     closeManagementAccordion(otherAccordion);
                 }
             });
@@ -273,6 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
             content.style.maxHeight = fullHeight;
             content.style.opacity = '1';
         }, 10);
+        
+        console.log('Opened management accordion');
     }
     
     function closeManagementAccordion(accordion) {
@@ -284,27 +300,33 @@ document.addEventListener('DOMContentLoaded', function() {
         
         content.style.maxHeight = '0px';
         content.style.opacity = '0';
+        
+        console.log('Closed management accordion');
     }
     
     console.log('Management accordions initialized:', managementAccordions.length);
 });
 
-// Nested Accordion Functionality for Viducation - COMPLETELY REWRITTEN
+// Nested Accordion Functionality for Viducation
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing nested accordions...');
     
-    // Remove any existing event listeners first
-    const nestedHeaders = document.querySelectorAll('.nested-accordion-header');
-    nestedHeaders.forEach(header => {
-        header.replaceWith(header.cloneNode(true));
-    });
-    
     const nestedAccordions = document.querySelectorAll('.nested-accordion-item');
+    
+    if (!nestedAccordions.length) {
+        console.log('No nested accordions found');
+        return;
+    }
     
     nestedAccordions.forEach((accordion, index) => {
         const header = accordion.querySelector('.nested-accordion-header');
         const arrow = accordion.querySelector('.nested-accordion-arrow');
         const content = accordion.querySelector('.nested-accordion-content');
+        
+        if (!header || !arrow || !content) {
+            console.warn('Missing elements in nested accordion:', accordion);
+            return;
+        }
         
         // Set initial state - ALL CLOSED
         content.style.maxHeight = '0px';
@@ -369,18 +391,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Nested accordions initialized:', nestedAccordions.length);
 });
 
-// Debug function to test nested accordions
-function testNestedAccordions() {
-    console.log('=== Testing Nested Accordions ===');
-    const accordions = document.querySelectorAll('.nested-accordion-item');
-    accordions.forEach((acc, i) => {
-        const title = acc.querySelector('h3').textContent;
-        const isActive = acc.classList.contains('active');
-        console.log(`${i + 1}. ${title} - Active: ${isActive}`);
-    });
-}
-
-
 // Fix for Viducation page button clickability
 document.addEventListener('DOMContentLoaded', function() {
     // Add click event listener specifically for Viducation page button
@@ -389,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.closest('.viducation-page-btn')) {
             e.stopPropagation();
             e.preventDefault();
-            window.location.href = 'viducation.html';
+            window.location.href = 'Viducation.html';
         }
     });
     
@@ -400,87 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
              e.target.closest('.viducation-page-btn'))) {
             e.stopPropagation();
             e.preventDefault();
-            window.location.href = 'viducation.html';
+            window.location.href = 'Viducation.html';
         }
     });
 });
-     // Management Team Accordions - COMPLETELY FIXED VERSION
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Initializing management accordions...');
-            
-            const managementAccordions = document.querySelectorAll('.manager-card.accordion-item');
-            
-            managementAccordions.forEach(accordion => {
-                const header = accordion.querySelector('.accordion-header');
-                const arrow = accordion.querySelector('.accordion-arrow');
-                const content = accordion.querySelector('.accordion-content');
-                
-                if (!header || !arrow || !content) {
-                    console.warn('Missing elements in management accordion:', accordion);
-                    return;
-                }
-                
-                // Set initial state - COMPLETELY HIDDEN
-                content.style.maxHeight = '0px';
-                content.style.opacity = '0';
-                content.style.overflow = 'hidden';
-                arrow.textContent = '→';
-                
-                header.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    console.log('Management accordion clicked:', accordion.querySelector('.manager-name').textContent);
-                    
-                    const isActive = accordion.classList.contains('active');
-                    
-                    // Close all other management accordions
-                    managementAccordions.forEach(otherAccordion => {
-                        if (otherAccordion !== accordion && otherAccordion.classList.contains('active')) {
-                            closeManagementAccordion(otherAccordion);
-                        }
-                    });
-                    
-                    // Toggle current accordion
-                    if (!isActive) {
-                        openManagementAccordion(accordion);
-                    } else {
-                        closeManagementAccordion(accordion);
-                    }
-                });
-            });
-            
-            function openManagementAccordion(accordion) {
-                const content = accordion.querySelector('.accordion-content');
-                const arrow = accordion.querySelector('.accordion-arrow');
-                
-                accordion.classList.add('active');
-                arrow.textContent = '←';
-                
-                // Calculate content height
-                content.style.maxHeight = 'none';
-                const fullHeight = content.scrollHeight + 'px';
-                content.style.maxHeight = '0px';
-                
-                // Trigger animation
-                setTimeout(() => {
-                    content.style.maxHeight = fullHeight;
-                    content.style.opacity = '1';
-                }, 10);
-                
-                console.log('Opened management accordion');
-            }
-            
-            function closeManagementAccordion(accordion) {
-                const content = accordion.querySelector('.accordion-content');
-                const arrow = accordion.querySelector('.accordion-arrow');
-                
-                accordion.classList.remove('active');
-                arrow.textContent = '→';
-                
-                content.style.maxHeight = '0px';
-                content.style.opacity = '0';
-                
-                console.log('Closed management accordion');
-            }
-            
-            console.log('Management accordions initialized:', managementAccordions.length);
-        });
