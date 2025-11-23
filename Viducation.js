@@ -53,35 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-// Fix for Viducation page button clickability - SIMPLIFIED VERSION
-document.addEventListener('DOMContentLoaded', function() {
-    // Remove all existing event listeners and use simple link
-    const viducationButtons = document.querySelectorAll('.viducation-page-btn');
-    
-    viducationButtons.forEach(button => {
-        // Remove any existing event listeners by cloning
-        const newButton = button.cloneNode(true);
-        button.parentNode.replaceChild(newButton, button);
-        
-        // Let the native link behavior work normally
-        newButton.addEventListener('click', function(e) {
-            console.log('Viducation button clicked - allowing default behavior');
-            // Don't prevent default - let the link work naturally
-        });
-    });
-});
-
-    // Debug Viducation button
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('viducation-page-btn') || 
-        e.target.closest('.viducation-page-btn')) {
-        console.log('Viducation button clicked');
-        console.log('Button href:', e.target.href);
-        console.log('Default prevented?', e.defaultPrevented);
-    }
-});
-
     
     console.log('Viducation navigation initialized successfully');
 });
@@ -310,5 +281,68 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log('Video gallery with thumbnails initialized');
+});
 
+// YouTube Video Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const videoCards = document.querySelectorAll('.video-card');
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalVideoTitle = document.getElementById('modalVideoTitle');
+    const modalVideoDescription = document.getElementById('modalVideoDescription');
+    const modalVideoContainer = document.querySelector('.modal-video-container');
+
+    // Open modal when video card is clicked
+    videoCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-video-id');
+            const videoTitle = this.querySelector('.video-title').textContent;
+            const videoDescription = this.querySelector('.video-description').textContent;
+            
+            // Update modal content
+            modalVideoTitle.textContent = videoTitle;
+            modalVideoDescription.textContent = videoDescription;
+            
+            // Create YouTube iframe player
+            const youtubeIframe = document.createElement('iframe');
+            youtubeIframe.width = '100%';
+            youtubeIframe.height = '100%';
+            youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            youtubeIframe.frameBorder = '0';
+            youtubeIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            youtubeIframe.allowFullscreen = true;
+            youtubeIframe.style.borderRadius = '12px';
+            
+            // Clear previous video and add new one
+            modalVideoContainer.innerHTML = '';
+            modalVideoContainer.appendChild(youtubeIframe);
+            
+            // Show modal
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal function
+    function closeVideoModal() {
+        // Stop YouTube video
+        const iframe = modalVideoContainer.querySelector('iframe');
+        if (iframe) {
+            iframe.src = ''; // Stop video playback
+        }
+        
+        videoModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal events
+    closeModal.addEventListener('click', closeVideoModal);
+    videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) closeVideoModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) closeVideoModal();
+    });
+
+    console.log('YouTube video gallery initialized with', videoCards.length, 'videos');
 });
