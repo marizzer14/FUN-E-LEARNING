@@ -975,201 +975,131 @@ max-height: 200px;
 .coming-soon-title {
     font-family: 'Playfair Display', serif;
 }
-/* Contact Us Section */
-.contactus-container {
-    background: #fff;
-    border-radius: 24px;
-    box-shadow: 0 2px 16px rgba(25, 118, 210, 0.08);
-    padding: 36px 28px;
-    margin-bottom: 48px;
-    text-align: center;
-}
-
-.contactus-title {
-    font-size: 1.7rem;
-    color: #1976d2;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.contactus-details p {
-    font-size: 1.08rem;
-    margin: 8px 0;
-}
-
-.contactus-details a {
-    color: #1976d2;
-    text-decoration: none;
-    transition: color 0.18s;
-}
-
-.contactus-details a:hover {
-    color: #0d47a1;
-    text-decoration: underline;
-}
-/* Feedback Section Styles */
-.feedback-section {
-    background: #fff;
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.1);
-    border: 2px solid #e3f2fd;
-    transition: all 0.3s ease;
-}
-
-.feedback-section:hover {
-    box-shadow: 0 12px 40px rgba(25, 118, 210, 0.15);
-    border-color: #90caf9;
-}
-
-.feedback-title {
-    font-size: 1.8rem;
-    color: #1976d2;
-    margin-bottom: 10px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.feedback-subtitle {
-    font-size: 1.1rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.feedback-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
+/* Compact Feedback Section Styles */
+.feedback-section.compact {
+    padding: 20px 25px;
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
+.feedback-section.compact .feedback-title {
+    font-size: 1.5rem;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: #1976d2;
+}
+
+.feedback-section.compact .feedback-subtitle {
     font-size: 1rem;
+    margin-bottom: 20px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #e3f2fd;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: #f8fbff;
-    font-family: inherit;
+/* Compact Form Layout */
+.compact-form {
+    max-width: 100%;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #1976d2;
-    background: #fff;
-    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.form-group textarea {
+.form-row .compact-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-group.compact-group {
+    margin-bottom: 15px;
+}
+
+.form-group.compact-group label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.form-group.compact-group input,
+.form-group.compact-group select,
+.form-group.compact-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+}
+
+.form-group.compact-group textarea {
+    min-height: 80px;
     resize: vertical;
-    min-height: 120px;
 }
 
-.submit-btn {
-    background: linear-gradient(135deg, #1976d2, #42a5f5);
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+.submit-btn.compact-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 5px;
 }
 
-.submit-btn:hover {
-    background: linear-gradient(135deg, #1565c0, #1976d2);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+.compact-message {
+    padding: 12px;
+    font-size: 0.9rem;
+    margin-top: 15px;
 }
 
-.submit-btn:active {
-    transform: translateY(0);
+.contactus-details.compact-details {
+    margin-top: 10px;
 }
 
-.submit-btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
+.contactus-details.compact-details p {
+    margin: 6px 0;
+    font-size: 1rem;
 }
 
-.spinner {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 2px solid transparent;
-    border-top: 2px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.form-message {
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 600;
-    display: none;
-}
-
-.form-message.success {
-    background: #e8f5e9;
-    color: #2e7d32;
-    border: 1px solid #c8e6c9;
-    display: block;
-}
-
-.form-message.error {
-    background: #ffebee;
-    color: #c62828;
-    border: 1px solid #ffcdd2;
-    display: block;
-}
-
-/* Responsive Design */
+/* Mobile adjustments for compact form */
 @media (max-width: 768px) {
-    .feedback-section {
-        padding: 20px;
-        margin: 0 10px 30px 10px;
+    .feedback-section.compact {
+        padding: 15px 20px;
+        margin: 0 5px 15px 5px;
     }
     
-    .feedback-title {
-        font-size: 1.5rem;
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
     }
     
-    .feedback-subtitle {
-        font-size: 1rem;
+    .feedback-section.compact .feedback-title {
+        font-size: 1.3rem;
+    }
+    
+    .feedback-section.compact .feedback-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .form-group.compact-group textarea {
+        min-height: 70px;
+        rows: 3;
     }
 }
+
+@media (max-width: 480px) {
+    .feedback-section.compact {
+        padding: 12px 15px;
+    }
+    
+    .feedback-section.compact .feedback-title {
+        font-size: 1.2rem;
+    }
+    
+    .form-group.compact-group input,
+    .form-group.compact-group select,
+    .form-group.compact-group textarea {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
 
 
 /* Footer */
@@ -1510,6 +1440,7 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.13;
     transform: rotate(45deg);
 }
+
 
 
 
