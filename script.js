@@ -393,9 +393,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
 // Feedback Form Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const feedbackForm = document.getElementById('feedbackForm');
@@ -659,8 +656,6 @@ if (typeof emailjs !== 'undefined') {
 
 
 
-
-
 // Fix for Viducation page button clickability
 document.addEventListener('DOMContentLoaded', function() {
     // Add click event listener specifically for Viducation page button
@@ -684,4 +679,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 
