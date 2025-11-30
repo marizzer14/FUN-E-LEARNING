@@ -15,31 +15,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($message) || strlen($message) < 10) $errors[] = "Message must be at least 10 characters";
     
     if (empty($errors)) {
-        // Email headers
+        // Email configuration
         $to = "inquiries.feedback@fun.e.learning.com";
         $email_subject = "Fun-E-Learning Inquiry: " . $subject;
+        
+        // Email content
         $email_body = "
+        New Feedback/Inquiry Received from Fun-E-Learning Website
+        
+        ===========================================
+        CONTACT INFORMATION:
+        ===========================================
         Name: $name
         Email: $email
         Subject: $subject
+        Date: " . date('F j, Y, g:i a') . "
         
-        Message:
+        ===========================================
+        MESSAGE:
+        ===========================================
         $message
         
-        Sent: " . date('Y-m-d H:i:s');
+        ===========================================
+        TECHNICAL DETAILS:
+        ===========================================
+        IP Address: {$_SERVER['REMOTE_ADDR']}
+        User Agent: {$_SERVER['HTTP_USER_AGENT']}
+        ";
         
+        // Email headers
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
         
         // Send email
         if (mail($to, $email_subject, $email_body, $headers)) {
-            echo json_encode(["success" => true, "message" => "Thank you! Your message has been sent."]);
+            // Success - redirect back with success message
+            header('Location: index.html?message=success');
+            exit;
         } else {
-            echo json_encode(["success" => false, "message" => "Sorry, there was an error sending your message."]);
+            // Error - redirect back with error message
+            header('Location: index.html?message=error');
+            exit;
         }
     } else {
-        echo json_encode(["success" => false, "message" => implode(" ", $errors)]);
+        // Validation errors - redirect back with error message
+        header('Location: index.html?message=validation_error');
+        exit;
     }
+} else {
+    // Invalid request method
+    header('Location: index.html?message=invalid_request');
+    exit;
 }
 ?>
