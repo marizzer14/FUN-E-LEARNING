@@ -221,6 +221,51 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Product cards initialized:', productCards.length);
 });
 
+productCards.forEach(card => {
+    // Skip Viducation card for accordion functionality
+    if (card.dataset.card === 'viducation') {
+        // Add click event for direct navigation
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Navigating to Viducation page');
+            window.location.href = 'Viducation.html';
+        });
+        
+        // Add hover effect specifically for Viducation
+        card.addEventListener('mouseenter', function() {
+            card.style.transform = 'translateY(-5px) scale(1.02)';
+            card.style.cursor = 'pointer';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            if (!card.classList.contains('expanded')) {
+                card.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+        
+        // Add keyboard support
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.location.href = 'Viducation.html';
+            }
+        });
+        
+        return; // Skip the rest of the loop for this card
+    }
+    
+    // Original accordion functionality for other cards
+    card.setAttribute('tabindex', '0');
+    
+    card.addEventListener('click', function(e) {
+        console.log('Product card clicked');
+        handleProductCardClick(card);
+    });
+    
+    // ... rest of the original code for other cards
+});
+
 // Management Team Accordions
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing management accordions...');
@@ -679,5 +724,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 
 
