@@ -636,58 +636,67 @@ max-height: 200px;
         font-size: 0.9rem;
     }
 }
-/* Fix for Viducation card expanded height */
-.product-card.expanded[data-card="viducation"] {
-    min-height: auto !important;
-    height: auto !important;
-}
-
-.product-card.expanded[data-card="viducation"] .card-details {
-    max-height: 515px !important; /* Increased by 15px */
-    opacity: 1 !important;
-    margin-top: 20px !important;
-}
-
-/* Make the Viducation button clickable */
-
-
-
-
-/* Viducation Page Button Styles */
-.viducation-button-container {
+/* Direct link message for Viducation card */
+.direct-link-message {
     margin-top: 20px;
+    padding: 15px;
+    background: #fffde7;
+    border-radius: 12px;
+    border: 2px solid #ffd54f;
     text-align: center;
 }
 
-.viducation-button-container,
-.viducation-page-btn {
-    pointer-events: auto !important;
-}
-
-.viducation-page-btn {
-    cursor: pointer;
-    pointer-events: auto !important;
-
-}
-.viducation-page-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #f3ff6f, #eeff2e);
-    color: rgb(47, 49, 0);
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 25px;
+.direct-link-message p {
+    color: #ff8f00;
     font-weight: 600;
-    font-size: 1rem;
-    border: 3px solid #4e4a00;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+    font-size: 1.05rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.viducation-page-btn:hover {
-    background: linear-gradient(135deg, #7f7319, #a8a769);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
-    color: linear-gradient(#f9ffb8, #f2ff60);
+.direct-link-message p::after {
+    content: "→";
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: pointRight 1.5s infinite ease-in-out;
+}
+
+@keyframes pointRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+/* Make Viducation card look more clickable */
+.product-card[data-card="viducation"] {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-card[data-card="viducation"]:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(255, 193, 7, 0.25);
+    border-color: #ffd54f;
+}
+
+.product-card[data-card="viducation"]:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+/* Update the card arrow animation for Viducation */
+.product-card[data-card="viducation"] .card-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Remove pointer-events: none for Viducation card to make it clickable */
+.product-card[data-card="viducation"] {
+    pointer-events: auto !important;
+}
+
+.product-card[data-card="viducation"] * {
+    pointer-events: auto !important;
 }
 
 
@@ -1464,6 +1473,7 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.13;
     transform: rotate(45deg);
 }
+
 
 
 
