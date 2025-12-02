@@ -1,3 +1,5 @@
+[file name]: script.js
+[file content begin]
 // Scroll to top on refresh
 window.onbeforeunload = function() { 
     window.scrollTo(0, 0); 
@@ -118,7 +120,7 @@ window.addEventListener('load', function() {
     }, 100);
 });
 
-// Products & Services Interactive Cards
+// Products & Services Interactive Cards - MODIFIED FOR VIDUCATION
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing product cards...');
     
@@ -131,16 +133,71 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     productCards.forEach(card => {
-        // Add tabindex for accessibility
+        const isViducationCard = card.dataset.card === 'viducation';
+        
+        if (isViducationCard) {
+            // Special handling for Viducation card - direct navigation
+            console.log('Setting up Viducation card for direct navigation');
+            
+            // Make entire card clickable for navigation
+            card.style.cursor = 'pointer';
+            
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Navigating to Viducation page');
+                window.location.href = 'Viducation.html';
+            });
+            
+            // Add keyboard support for accessibility
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = 'Viducation.html';
+                }
+            });
+            
+            // Hover effects
+            card.addEventListener('mouseenter', function() {
+                if (!card.classList.contains('expanded')) {
+                    card.style.transform = 'translateY(-5px) scale(1.02)';
+                    card.style.boxShadow = '0 12px 40px rgba(255, 193, 7, 0.25)';
+                    card.style.borderColor = '#ffd54f';
+                    
+                    // Animate the arrow
+                    const arrow = card.querySelector('.card-arrow');
+                    if (arrow) {
+                        arrow.style.transform = 'translateX(5px)';
+                    }
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (!card.classList.contains('expanded')) {
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.boxShadow = '0 8px 32px rgba(25, 118, 210, 0.1)';
+                    card.style.borderColor = '#e3f2fd';
+                    
+                    // Reset the arrow
+                    const arrow = card.querySelector('.card-arrow');
+                    if (arrow) {
+                        arrow.style.transform = 'translateX(0)';
+                    }
+                }
+            });
+            
+            // Prevent accordion functionality
+            return;
+        }
+        
+        // Original accordion functionality for other cards
         card.setAttribute('tabindex', '0');
         
-        // Add click event
         card.addEventListener('click', function(e) {
             console.log('Product card clicked');
             handleProductCardClick(card);
         });
         
-        // Add keyboard support
         card.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -148,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Add hover effects
         card.addEventListener('mouseenter', function() {
             if (!card.classList.contains('expanded')) {
                 card.style.transform = 'translateY(-5px)';
@@ -163,6 +219,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function handleProductCardClick(clickedCard) {
+        // Don't handle clicks on Viducation card
+        if (clickedCard.dataset.card === 'viducation') {
+            return;
+        }
+        
         const isExpanded = clickedCard.classList.contains('expanded');
         
         if (isExpanded) {
@@ -175,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function expandProductCard(card) {
-        // Collapse all cards first
+        // Collapse all cards first (except Viducation)
         collapseAllProductCards();
         
         // Expand the clicked card
@@ -201,6 +262,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function collapseAllProductCards() {
         productCards.forEach(card => {
+            // Don't collapse Viducation card
+            if (card.dataset.card === 'viducation') {
+                return;
+            }
+            
             card.classList.remove('expanded');
             card.setAttribute('aria-expanded', 'false');
         });
@@ -208,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function checkProductExpandedState() {
         const hasExpanded = Array.from(productCards).some(card => 
-            card.classList.contains('expanded')
+            card.dataset.card !== 'viducation' && card.classList.contains('expanded')
         );
         
         if (hasExpanded) {
@@ -219,51 +285,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     console.log('Product cards initialized:', productCards.length);
-});
-
-productCards.forEach(card => {
-    // Skip Viducation card for accordion functionality
-    if (card.dataset.card === 'viducation') {
-        // Add click event for direct navigation
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Navigating to Viducation page');
-            window.location.href = 'Viducation.html';
-        });
-        
-        // Add hover effect specifically for Viducation
-        card.addEventListener('mouseenter', function() {
-            card.style.transform = 'translateY(-5px) scale(1.02)';
-            card.style.cursor = 'pointer';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            if (!card.classList.contains('expanded')) {
-                card.style.transform = 'translateY(0) scale(1)';
-            }
-        });
-        
-        // Add keyboard support
-        card.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                window.location.href = 'Viducation.html';
-            }
-        });
-        
-        return; // Skip the rest of the loop for this card
-    }
-    
-    // Original accordion functionality for other cards
-    card.setAttribute('tabindex', '0');
-    
-    card.addEventListener('click', function(e) {
-        console.log('Product card clicked');
-        handleProductCardClick(card);
-    });
-    
-    // ... rest of the original code for other cards
 });
 
 // Management Team Accordions
@@ -352,91 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Management accordions initialized:', managementAccordions.length);
 });
 
-// Nested Accordion Functionality for Viducation
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Initializing nested accordions...');
-    
-    const nestedAccordions = document.querySelectorAll('.nested-accordion-item');
-    
-    if (!nestedAccordions.length) {
-        console.log('No nested accordions found');
-        return;
-    }
-    
-    nestedAccordions.forEach((accordion, index) => {
-        const header = accordion.querySelector('.nested-accordion-header');
-        const arrow = accordion.querySelector('.nested-accordion-arrow');
-        const content = accordion.querySelector('.nested-accordion-content');
-        
-        if (!header || !arrow || !content) {
-            console.warn('Missing elements in nested accordion:', accordion);
-            return;
-        }
-        
-        // Set initial state - ALL CLOSED
-        content.style.maxHeight = '0px';
-        content.style.overflow = 'hidden';
-        arrow.textContent = '→';
-        accordion.classList.remove('active');
-        
-        // Add single click event listener
-        header.addEventListener('click', function(e) {
-            console.log('Nested accordion clicked:', index);
-            
-            // Get fresh references to elements
-            const currentAccordion = this.parentElement;
-            const currentContent = currentAccordion.querySelector('.nested-accordion-content');
-            const currentArrow = currentAccordion.querySelector('.nested-accordion-arrow');
-            const isCurrentlyActive = currentAccordion.classList.contains('active');
-            
-            console.log('Current state:', isCurrentlyActive);
-            
-            // Close all other nested accordions
-            nestedAccordions.forEach(otherAccordion => {
-                if (otherAccordion !== currentAccordion) {
-                    const otherContent = otherAccordion.querySelector('.nested-accordion-content');
-                    const otherArrow = otherAccordion.querySelector('.nested-accordion-arrow');
-                    
-                    otherAccordion.classList.remove('active');
-                    otherContent.style.maxHeight = '0px';
-                    otherArrow.textContent = '→';
-                }
-            });
-            
-            // Toggle current accordion
-            if (isCurrentlyActive) {
-                // Close it
-                currentAccordion.classList.remove('active');
-                currentContent.style.maxHeight = '0px';
-                currentArrow.textContent = '→';
-                console.log('Closed nested accordion');
-            } else {
-                // Open it
-                currentAccordion.classList.add('active');
-                
-                // Calculate height and animate
-                currentContent.style.maxHeight = 'none';
-                const fullHeight = currentContent.scrollHeight + 'px';
-                currentContent.style.maxHeight = '0px';
-                
-                setTimeout(() => {
-                    currentContent.style.maxHeight = fullHeight;
-                }, 10);
-                
-                currentArrow.textContent = '↓';
-                console.log('Opened nested accordion');
-            }
-            
-            // Prevent any other handlers
-            e.stopPropagation();
-            return false;
-        });
-    });
-    
-    console.log('Nested accordions initialized:', nestedAccordions.length);
-});
-
-
+// REMOVED: Nested Accordion Functionality for Viducation (not needed anymore)
 
 // Feedback Form Functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -693,37 +630,4 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof emailjs !== 'undefined') {
     emailjs.init('YOUR_USER_ID'); // Replace with your actual User ID
 }
-
-
-
-
-
-
-
-
-// Fix for Viducation page button clickability
-document.addEventListener('DOMContentLoaded', function() {
-    // Add click event listener specifically for Viducation page button
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('viducation-page-btn') || 
-            e.target.closest('.viducation-page-btn')) {
-            e.stopPropagation();
-            e.preventDefault();
-            window.location.href = 'Viducation.html';
-        }
-    });
-    
-    // Also allow keyboard navigation for accessibility
-    document.addEventListener('keydown', function(e) {
-        if ((e.key === 'Enter' || e.key === ' ') && 
-            (e.target.classList.contains('viducation-page-btn') || 
-             e.target.closest('.viducation-page-btn'))) {
-            e.stopPropagation();
-            e.preventDefault();
-            window.location.href = 'Viducation.html';
-        }
-    });
-});
-
-
-
+[file content end]
