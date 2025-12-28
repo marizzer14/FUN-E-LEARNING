@@ -1236,6 +1236,9 @@ footer::before {
     background: #fff;
     padding: 4px;
 }
+.footer.mainlogo:hover {
+    transform: scale(1.07) rotate(-3deg);
+}
 
 .footer-logo span {
     font-size: 1.3rem;
@@ -1671,6 +1674,7 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.13;
     transform: rotate(45deg);
 }
+
 
 
 
