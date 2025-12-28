@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fun-E-Learning</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Background Circles -->
     <div class="interactive-bg">
         <div class="bg-circle bg-circle1"></div>
         <div class="bg-circle bg-circle2"></div>
@@ -16,12 +17,13 @@
         <div class="bg-circle bg-circle5"></div>
         <div class="bg-circle bg-circle6"></div>
     </div>
-    
+
+    <!-- Header & Navigation -->
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="">
-                <img class="mainlogo" src="imgs/MainLogo.png" alt="Logo" onclick="location.reload()" />
+                <a href="#home">
+                    <img class="mainlogo" src="imgs/MainLogo.png" alt="Fun-E-Learning Logo" />
                 </a>
             </div>
             <div class="nav-items">
@@ -38,91 +40,69 @@
 
     <main>
         <!-- Hero Section -->
-        <div class="main-container" id="home">
-            <div class="bgs">
-                <img class="bg1" src="imgs/HomeBG1.png" alt="Background"/>
+        <section id="home" class="main-container">
+            <div class="hero-section">
+                <img class="hero-bg" src="imgs/HomeBG1.png" alt="Fun-E-Learning Background" />
             </div>
-        </div>
+        </section>
 
         <!-- About Us Section -->
-        <div class="main-container">
-            <section class="aboutus-container" id="aboutus">
+        <section id="aboutus" class="main-container">
+            <div class="aboutus-container">
                 <div class="aboutus-content">
                     <div class="aboutus-hero">
-                        <img src="imgs/F.element.png" alt="About Us Hero"/>
+                        <img src="imgs/F.element.png" alt="About Us Illustration" />
                     </div>
                     <div class="aboutus-text">
-                        <h1 class="aboutus-heading">About Us</h1>
+                        <h1 class="section-heading">About Us</h1>
                         <p>
                             Fun-e-Learning, Inc. is a locally SEC registered corporation in the business of creating 
-                            educational materials for the Filipino learners.  
-                            Fun-e-Learning, Inc. is guided by the advocacy of bringing out the best from the learners.rs.
+                            educational materials for the Filipino learners. Fun-e-Learning, Inc. is guided by the 
+                            advocacy of bringing out the best from the learners.
                         </p>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
         
         <!-- Mission / Vision Section -->
-        <div class="main-container">
+        <section class="main-container">
             <div class="mission-vision-container">
                 <h2 class="mission-vision-title">MISSION / VISION</h2>
                 <p class="mission-vision-text">
-                    The mission of Fun-e-Learning is to provide the Filipino learners with video materials useful to their growth and applicable to their daily lives.<br><br>
-                    The vision of Fun-e-Learning is to have a significant part in making the Filipinos among the top learners in the world.
+                    The mission of Fun-e-Learning is to provide the Filipino learners with video materials 
+                    useful to their growth and applicable to their daily lives.<br><br>
+                    The vision of Fun-e-Learning is to have a significant part in making the Filipinos 
+                    among the top learners in the world.
                 </p>
             </div>
-        </div>
+        </section>
 
         <!-- Products & Services Section -->
-        <div class="main-container">
-            <section class="products-container" id="products">
-                <h1 class="products-title">PRODUCTS AND SERVICES</h1>
+        <section id="products" class="main-container">
+            <div class="products-container">
+                <h1 class="section-heading">PRODUCTS AND SERVICES</h1>
                 <div class="products-grid">
-                    <!-- Viducation Card with Nested Dropdowns -->
-                    <div class="product-card" data-card="viducation">
-                        <div class="card-header">
-                            <div class="card-icon">📚</div>
-                            <h2 class="card-title">Viducation</h2>
-                            <div class="card-arrow">↓</div>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-tagline">A digital library with a purpose of bringing out the best in Filipino learners.</p>
-                            <div class="card-details">
-                                <p>Viducation comes in several groups, namely:</p>
-                                
-                                <div class="product-card" data-card="viducation" onclick="window.location.href='Viducation.html'">
-    <div class="card-header">
-        <div class="card-icon">📚</div>
-        <h2 class="card-title">Viducation</h2>
-        <div class="card-arrow">→</div>
-    </div>
-    <div class="card-content">
-        <p class="card-tagline">A digital library with a purpose of bringing out the best in Filipino learners.</p>
-        <div class="card-details">
-            <p>Viducation comes in several groups, namely:</p>
-            
-            <ul class="features-list">
-                <li>Short Stories - Character-building narratives</li>
-                <li>Soft Skills - Personality enhancement videos</li>
-                <li>Call Center - BPO industry preparation tools</li>
-            </ul>
-            
-            <div class="product-image-space">
-                <div class="image-placeholder">
-                    <img src="Products/Viducation.jpg" alt="Viducation" class="accordion-img"/>
-                </div>
-            </div>
-            
-            <div class="direct-link-message">
-                <p>Click anywhere on this card to go to the Viducation page →</p>
-            </div>
-        </div>
-    </div>
-</div>
+                    
+                    <!-- Viducation Card (Direct Link) -->
+                    <div class="product-card viducation-card" data-card="viducation">
+                        <a href="Viducation.html" class="product-card-link">
+                            <div class="card-header">
+                                <div class="card-icon">📚</div>
+                                <h2 class="card-title">Viducation</h2>
+                                <div class="card-arrow">↗</div>
+                            </div>
+                            <div class="card-content">
+                                <p class="card-tagline">A digital library with a purpose of bringing out the best in Filipino learners.</p>
+                                <div class="card-preview">
+                                    <p class="card-link-hint">Click to visit Viducation Page →</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
-                    <!-- Fun-e-ducation Card -->
-                    <div class="product-card" data-card="funeducation">
+                    <!-- Fun-e-ducation Card (Expandable) -->
+                    <div class="product-card expandable-card" data-card="funeducation">
                         <div class="card-header">
                             <div class="card-icon">🎓</div>
                             <h2 class="card-title">Fun-e-ducation</h2>
@@ -131,20 +111,23 @@
                         <div class="card-content">
                             <p class="card-tagline">Educational face-to-face seminars structured to improve important skills.</p>
                             <div class="card-details">
-                                <p>Some among the subjects of this program are confidence building, job interview tips, effective resume preparation, and many more.</p>
-                                
-                                <!-- Image Space for Fun-e-ducation -->
+                                <p>Some among the subjects of this program are:</p>
+                                <ul class="card-features">
+                                    <li>Confidence building</li>
+                                    <li>Job interview tips</li>
+                                    <li>Effective resume preparation</li>
+                                    <li>Communication skills</li>
+                                    <li>Leadership development</li>
+                                </ul>
                                 <div class="product-image-space">
-                                    <div class="image-placeholder">
-                                        <img src="Products/Fun-e-ducation.jpg" alt="Fun-e-ducation" class="accordion-img"/>
-                                    </div>
+                                    <img src="Products/Fun-e-ducation.jpg" alt="Fun-e-ducation Preview" class="accordion-img" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Fun-e-Xam Card -->
-                    <div class="product-card" data-card="funexam">
+                    <!-- Fun-e-Xam Card (Expandable) -->
+                    <div class="product-card expandable-card" data-card="funexam">
                         <div class="card-header">
                             <div class="card-icon">📊</div>
                             <h2 class="card-title">Fun-e-Xam</h2>
@@ -153,43 +136,47 @@
                         <div class="card-content">
                             <p class="card-tagline">Online assessments created to measure the amount of learnings the learners have gathered.</p>
                             <div class="card-details">
-                                <p>Comprehensive assessment tools designed to track and measure learning progress through interactive online evaluations.</p>
-                                
-                                <!-- Image Space for Fun-e-Xam -->
+                                <p>Comprehensive assessment tools designed to:</p>
+                                <ul class="card-features">
+                                    <li>Track learning progress</li>
+                                    <li>Measure knowledge retention</li>
+                                    <li>Provide interactive evaluations</li>
+                                    <li>Generate performance reports</li>
+                                    <li>Identify areas for improvement</li>
+                                </ul>
                                 <div class="product-image-space">
-                                    <div class="image-placeholder">
-                                        <img src="Products/fun-e-xam.jpg" alt="fun-e-exam" class="accordion-img"/> 
-                                    </div>
+                                    <img src="Products/fun-e-xam.jpg" alt="Fun-e-Xam Preview" class="accordion-img" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
                                                                                 
         <!-- Management Section -->
-        <div class="main-container">
-            <section class="management-container" id="management">
-                <h1 class="management-title">Our Management Team</h1>
-                <div class="management-list">
+        <section id="management" class="main-container">
+            <div class="management-container">
+                <h1 class="section-heading">Our Management Team</h1>
+                <div class="management-grid">
+                    
                     <!-- Ronald Abeleda Card -->
                     <div class="manager-card accordion-item">
-                       <div class="initial-manager-card">
-                        <div class="manager-image-container">
-                            <img src="Management/TeamProfile/ID.Pic(RonaldAbeleda).jpg" alt="Ronald B. Abeleda" class="manager-image">
-                        </div>
-                        <div class="accordion-header">
-                            <span class="accordion-arrow">→</span>
-                            <span class="manager-name">Ronald B. Abeleda</span>
-                        </div>
+                        <div class="manager-profile">
+                            <div class="manager-image-container">
+                                <img src="Management/TeamProfile/ID.Pic(RonaldAbeleda).jpg" alt="Ronald B. Abeleda" class="manager-image">
+                            </div>
+                            <div class="accordion-header">
+                                <span class="accordion-arrow">→</span>
+                                <span class="manager-name">Ronald B. Abeleda</span>
+                            </div>
                         </div>
                         <div class="accordion-content">
                             <div class="management-details">
-                                <h3 class="card-title">Chief Marketing Officer, MBA</h3>
-                                <p class="card-subtitle">Marketing & Business Development</p>
+                                <h3 class="manager-title">Chief Marketing Officer, MBA</h3>
+                                <p class="manager-subtitle">Marketing & Business Development</p>
                                 <div class="manager-description">
-                                    <p><b>Ronald B. Abeleda, MBA.</b> Chief Marketing Officer, his impressive marketing experience here and abroad, shall be instrumental in the success of the organization. Ronald is also known for providing excellent marketing seminars and trainings in the Academic, BPO, IT, Real Estate, Health and other industries. Ronald accomplished his BS in Accountancy in University of Manila, took his Local Area Networking in Ateneo, finished his RCFE in Administration in JMPM, California, and acquired his MBA in Trece Martirez College.</p>
+                                    <p><strong>Ronald B. Abeleda, MBA.</strong> Chief Marketing Officer, his impressive marketing experience here and abroad shall be instrumental in the success of the organization. Ronald is also known for providing excellent marketing seminars and trainings in the Academic, BPO, IT, Real Estate, Health and other industries.</p>
                                 </div>
                             </div>
                         </div>
@@ -197,19 +184,21 @@
 
                     <!-- Joey Livelo Card -->
                     <div class="manager-card accordion-item">
-                        <div class="manager-image-container">
-                            <img src="Management/TeamProfile/ID.Pic(Joey).jpeg" alt="Joey Livelo" class="manager-image">
-                        </div>
-                        <div class="accordion-header">
-                            <span class="accordion-arrow">→</span>
-                            <span class="manager-name">Joey Livelo</span>
+                        <div class="manager-profile">
+                            <div class="manager-image-container">
+                                <img src="Management/TeamProfile/ID.Pic(Joey).jpeg" alt="Joey Livelo" class="manager-image">
+                            </div>
+                            <div class="accordion-header">
+                                <span class="accordion-arrow">→</span>
+                                <span class="manager-name">Joey Livelo</span>
+                            </div>
                         </div>
                         <div class="accordion-content">
                             <div class="management-details">
-                                <h3 class="card-title">Chief Operating Officer</h3>
-                                <p class="card-subtitle">Operations & Business Strategy</p>
+                                <h3 class="manager-title">Chief Operating Officer</h3>
+                                <p class="manager-subtitle">Operations & Business Strategy</p>
                                 <div class="manager-description">
-                                    <p><b>Felino (Joey) D. Livelo.</b> Chief Operating Officer, Known for his excellence in running businesses and operations, Joey is expected to play an important role in the success of the company. He finished his studies with excellent result, making it as the salutatorian and valedictorian in elementary and high school respectively. Joey excelled in his college at DLSU Manila, consistently included in the dean's list. Joey offered his services as the national president to Jaycess (Junior Chamber National Philippines) in 1995.</p>
+                                    <p><strong>Felino (Joey) D. Livelo.</strong> Chief Operating Officer, known for his excellence in running businesses and operations, Joey is expected to play an important role in the success of the company.</p>
                                 </div>
                             </div>
                         </div>
@@ -217,105 +206,101 @@
 
                     <!-- Roy Asi Card -->
                     <div class="manager-card accordion-item">
-                        <div class="manager-image-container">
-                            <img src="Management/TeamProfile/ros_profile.svg" alt="Roy Asi" class="manager-image">
-                        </div>
-                        <div class="accordion-header">
-                            <span class="accordion-arrow">→</span>
-                            <span class="manager-name">Roy Asi</span>
+                        <div class="manager-profile">
+                            <div class="manager-image-container">
+                                <img src="Management/TeamProfile/ros_profile.svg" alt="Roy Asi" class="manager-image">
+                            </div>
+                            <div class="accordion-header">
+                                <span class="accordion-arrow">→</span>
+                                <span class="manager-name">Roy Asi</span>
+                            </div>
                         </div>
                         <div class="accordion-content">
                             <div class="management-details">
-                                <h3 class="card-title">Chief Finance Officer</h3>
-                                <p class="card-subtitle">Finance & Technology Innovation</p>
+                                <h3 class="manager-title">Chief Finance Officer</h3>
+                                <p class="manager-subtitle">Finance & Technology Innovation</p>
                                 <div class="manager-description">
-                                    <p><b>Roy Noel A. Asi</b>, Chief Finance Officer, accomplished and experience businessman, Roy's contribution shall be instrumental as the company pursue its goal. Roy is also creative and innovative. He is among who pioneered several technology in the industry. Roy excelled his Electronic Communications Engineering at De Lasalle University, Manila.</p>
+                                    <p><strong>Roy Noel A. Asi</strong>, Chief Finance Officer, accomplished and experienced businessman, Roy's contribution shall be instrumental as the company pursues its goal. Roy is also creative and innovative.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
-        <!-- Fun-E-Xam Section -->
-        <div class="main-container">
-            <section class="fun-e-exam-section" id="fun-e-exam">
-                <div class="coming-soon-container">
-                    <div class="coming-soon-icon-wrapper">
-                        <img src="imgs/F.element.png" alt="About Us Icon" class="coming-soon-icon">
-                    </div>
-                    <h1 class="coming-soon-title">Soon to be Available</h1>
-                    <p class="coming-soon-desc">We're working hard to bring you this feature. Stay tuned for updates!</p>
+        <!-- Fun-E-Xam Coming Soon Section -->
+        <section id="fun-e-exam" class="main-container">
+            <div class="coming-soon-container">
+                <div class="coming-soon-icon-wrapper">
+                    <img src="imgs/F.element.png" alt="Coming Soon Icon" class="coming-soon-icon">
                 </div>
-            </section>
-        </div>
+                <h1 class="coming-soon-title">Soon to be Available</h1>
+                <p class="coming-soon-desc">
+                    We're working hard to bring you this feature. Stay tuned for updates!
+                </p>
+            </div>
+        </section>
 
         <!-- Contact Us Section -->
-<div class="main-container">
-    <section class="contactus-container" id="contactus">
-        <h1 class="contactus-title">Contact Us</h1>
-        
-        <!-- Feedback Form -->
-        <div class="feedback-section">
-            <h2 class="feedback-title">Send Us Your Feedback</h2>
-            <p class="feedback-subtitle">We'd love to hear from you! Share your thoughts, questions, or inquiries.</p>
-            
-            <form id="feedbackForm" class="feedback-form">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+        <section id="contactus" class="main-container">
+            <div class="contactus-container">
+                <h1 class="section-heading">Contact Us</h1>
                 
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="feedback-section">
+                    <h2 class="feedback-title">Send Us Your Feedback</h2>
+                    <p class="feedback-subtitle">
+                        We'd love to hear from you! Share your thoughts, questions, or inquiries.
+                    </p>
+                    
+                    <form id="feedbackForm" class="feedback-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Product Feedback">Product Feedback</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Partnership">Partnership Opportunity</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Suggestion">Suggestion</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="6" required 
+                                      placeholder="Please share your feedback, questions, or inquiries..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading">
+                                    <span class="spinner"></span> Sending...
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
                 </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a topic</option>
-                        <option value="General Inquiry">General Inquiry</option>
-                        <option value="Product Feedback">Product Feedback</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="Partnership">Partnership Opportunity</option>
-                        <option value="Complaint">Complaint</option>
-                        <option value="Suggestion">Suggestion</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Please share your feedback, questions, or inquiries..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <span class="btn-text">Send Message</span>
-                        <span class="btn-loading" style="display: none;">
-                            <span class="spinner"></span> Sending...
-                        </span>
-                    </button>
-                </div>
-                
-                <div id="formMessage" class="form-message"></div>
-            </form>
-        </div>
-        
-        <!-- Existing Contact Information -->
-        <div class="contactus-details">
-            <p>Email: <a href="mailto:inquiries.feedback@fun.e.learning.com">inquiries.feedback@fun.e.learning.com</a></p>
-            <p>YouTube: <a href="https://fun-e-learning.com" target="_blank">fun-e-learning.com</a></p>
-            <p>Address: 4th Floor, Cattleya Condominium, 235 Salcedo St., Legaspi Village, Makati City</p>
-            <p>Telephone: (6327) 586-1754</p>
-        </div>
-    </section>
-</div>
-</div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -330,8 +315,8 @@
                 <a href="#contactus">Contact Us</a>
             </div>
             <div class="footer-social">
-                <a href="https://fun-e-learning.com" target="_blank">🌐</a>
-                <a href="mailto:ronald.abeleda@fun-e-learning.com">✉️</a>
+                <a href="https://fun-e-learning.com" target="_blank" aria-label="Website">🌐</a>
+                <a href="mailto:ronald.abeleda@fun-e-learning.com" aria-label="Email">✉️</a>
             </div>
             <div class="footer-quote">
                 "BRINGING THE BEST IN YOU."
@@ -347,6 +332,7 @@
         </div>
     </footer>
 
+    <!-- Background Swirls -->
     <div class="swirl-bg">
         <svg class="swirl-svg swirl1" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
@@ -389,7 +375,7 @@
         </svg>
     </div>
     
-    <!-- Only include script.js once -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
