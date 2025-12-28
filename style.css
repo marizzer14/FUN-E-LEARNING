@@ -1441,7 +1441,7 @@ body.scrolled .interactive-bg .bg-circle6 { transform: translateY(-10px) scale(1
     height: 100px;
     margin: 0 auto 30px auto;
     padding: 20px;
-    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    background: linear-gradient(135deg, #1976d2, #f54842, #96f542);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1671,6 +1671,7 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.13;
     transform: rotate(45deg);
 }
+
 
 
 
