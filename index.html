@@ -39,8 +39,8 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="main-container">
+         <!-- Image Banner Section -->
+        <section id="home" class="image-banner-section">
             <div class="hero-section">
                 <img class="hero-bg" src="imgs/HomeBG1.png" alt="Fun-E-Learning Background" />
             </div>
@@ -229,29 +229,28 @@
             </div>
         </section>
 
-        <!-- Fun-E-Xam Coming Soon Section -->
-        <section id="fun-e-exam" class="main-container">
-            <div class="coming-soon-container">
-                <div class="coming-soon-icon-wrapper">
-                    <img src="imgs/F.element.png" alt="Coming Soon Icon" class="coming-soon-icon">
+           <!-- Fun-E-Xam Section -->
+        <div class="main-container">
+            <section class="fun-e-exam-section" id="fun-e-exam">
+                <div class="coming-soon-container">
+                    <div class="coming-soon-icon-wrapper">
+                        <img src="imgs/F.element.png" alt="About Us Icon" class="coming-soon-icon">
+                    </div>
+                    <h1 class="coming-soon-title">Soon to be Available</h1>
+                    <p class="coming-soon-desc">We're working hard to bring you this feature. Stay tuned for updates!</p>
                 </div>
-                <h1 class="coming-soon-title">Soon to be Available</h1>
-                <p class="coming-soon-desc">
-                    We're working hard to bring you this feature. Stay tuned for updates!
-                </p>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Contact Us Section -->
-        <section id="contactus" class="main-container">
-            <div class="contactus-container">
-                <h1 class="section-heading">Contact Us</h1>
+                <!-- Contact Us Section -->
+        <div class="main-container">
+            <section class="contactus-container" id="contactus">
+                <h1 class="contactus-title">Contact Us</h1>
                 
+                <!-- Feedback Form -->
                 <div class="feedback-section">
                     <h2 class="feedback-title">Send Us Your Feedback</h2>
-                    <p class="feedback-subtitle">
-                        We'd love to hear from you! Share your thoughts, questions, or inquiries.
-                    </p>
+                    <p class="feedback-subtitle">We'd love to hear from you! Share your thoughts, questions, or inquiries.</p>
                     
                     <form id="feedbackForm" class="feedback-form">
                         <div class="form-group">
@@ -280,14 +279,13 @@
                         
                         <div class="form-group">
                             <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" rows="6" required 
-                                      placeholder="Please share your feedback, questions, or inquiries..."></textarea>
+                            <textarea id="message" name="message" rows="6" required placeholder="Please share your feedback, questions, or inquiries..."></textarea>
                         </div>
                         
                         <div class="form-group">
                             <button type="submit" class="submit-btn" id="submitBtn">
                                 <span class="btn-text">Send Message</span>
-                                <span class="btn-loading">
+                                <span class="btn-loading" style="display: none;">
                                     <span class="spinner"></span> Sending...
                                 </span>
                             </button>
@@ -296,86 +294,87 @@
                         <div id="formMessage" class="form-message"></div>
                     </form>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="imgs/mainlogo.png" alt="Footer Logo" />
-                <span>Fun-E-Learning</span>
-            </div>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#management">Management</a>
-                <a href="#fun-e-exam">Fun-E-Xam</a>
-                <a href="#contactus">Contact Us</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://fun-e-learning.com" target="_blank" aria-label="Website">🌐</a>
-                <a href="mailto:ronald.abeleda@fun-e-learning.com" aria-label="Email">✉️</a>
-            </div>
-            <div class="footer-quote">
-                "BRINGING THE BEST IN YOU."
-            </div>
-            <div class="footer-contact">
-                <div>Address: 4th Floor, Cattleya Condominium, 235 Salcedo St., Legaspi Village, Makati City</div>
-                <div>Telephone: (6327) 586-1754</div>
-                <div>Website: <a href="https://www.fun-e-learning.com" target="_blank">www.fun-e-learning.com</a></div>
-            </div>
-            <div class="footer-copy">
-                &copy; 2025 FUN-E-LEARNING. All rights reserved.
-            </div>
+                
+              
+            </section>
         </div>
-    </footer>
+        </div>
+            </main>
 
-    <!-- Background Swirls -->
-    <div class="swirl-bg">
-        <svg class="swirl-svg swirl1" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
-                stroke="#90caf9" stroke-width="18" fill="none" filter="url(#glow1)" />
-            <defs>
-                <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-        </svg>
-        <svg class="swirl-svg swirl2" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
-                stroke="#b3c2d6" stroke-width="18" fill="none" filter="url(#glow2)" />
-            <defs>
-                <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-        </svg>
-        <svg class="swirl-svg swirl3" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M40,130 Q130,40 220,130 Q130,220 40,130 Z"
-                stroke="#ffe0b2" stroke-width="12" fill="none" filter="url(#glow3)" />
-            <defs>
-                <filter id="glow3" x="-20%" y="-20%" z="1%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-        </svg>
-    </div>
-    
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-</body>
-</html>
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="imgs/mainlogo.png" alt="Footer Logo" />
+                        <span>Fun-E-Learning</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#products">Products</a>
+                        <a href="#management">Management</a>
+                        <a href="#fun-e-exam">Fun-E-Xam</a>
+                        <a href="#contactus">Contact Us</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://fun-e-learning.com" target="_blank">🌐</a>
+                        <a href="mailto:ronald.abeleda@fun-e-learning.com">✉️</a>
+                    </div>
+                    <div class="footer-quote">
+                        "BRINGING THE BEST IN YOU."
+                    </div>
+                    <div class="footer-contact">
+                        <div>Address: 4th Floor, Cattleya Condominium, 235 Salcedo St., Legaspi Village, Makati City</div>
+                        <div>Telephone: (6327) 586-1754</div>
+                        <div>Website: <a href="https://www.fun-e-learning.com" target="_blank">www.fun-e-learning.com</a></div>
+                    </div>
+                    <div class="footer-copy">
+                        &copy; 2025 FUN-E-LEARNING. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+
+            <div class="swirl-bg">
+                <svg class="swirl-svg swirl1" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
+                        stroke="#90caf9" stroke-width="18" fill="none" filter="url(#glow1)" />
+                    <defs>
+                        <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                </svg>
+                <svg class="swirl-svg swirl2" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60,210 Q210,60 360,210 Q210,360 60,210 Z"
+                        stroke="#b3c2d6" stroke-width="18" fill="none" filter="url(#glow2)" />
+                    <defs>
+                        <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                </svg>
+                <svg class="swirl-svg swirl3" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40,130 Q130,40 220,130 Q130,220 40,130 Z"
+                        stroke="#ffe0b2" stroke-width="12" fill="none" filter="url(#glow3)" />
+                    <defs>
+                        <filter id="glow3" x="-20%" y="-20%" z="1%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            
+            <!-- Only include script.js once -->
+            <script src="script.js"></script>
+        </body>
+        </html>
