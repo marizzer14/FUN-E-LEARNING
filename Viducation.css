@@ -610,3 +610,67 @@ body.viducation-page::-webkit-scrollbar-thumb {
 body.viducation-page::-webkit-scrollbar-thumb:hover {
     background: #ffb300;
 }
+
+/* added */
+#english-lessons .video-card {
+    border-color: #ffca28;
+}
+
+#english-lessons .video-card:hover {
+    border-color: #ffb300;
+    background: #fff59d;
+}
+
+#others .video-card {
+    border-color: #ffcc80;
+}
+
+#others .video-card:hover {
+    border-color: #ffa726;
+    background: #ffe0b2;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .video-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .video-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+    }
+    
+    .video-thumbnail {
+        height: 160px;
+    }
+    
+    /* Adjust menu for more items */
+    .viducation-menu {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .video-thumbnail {
+        height: 200px;
+    }
+    
+    .gallery-title {
+        font-size: 1.7rem;
+    }
+    
+    /* Stack menu items vertically on very small screens */
+    .viducation-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
