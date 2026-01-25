@@ -610,6 +610,26 @@
     pointer-events: none;
     animation: twinkle 4s infinite ease-in-out;
 }
+/* Decorative sparkle */
+.decorative-sparkle {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: sparkle 3s infinite ease-in-out;
+    z-index: 1;
+}
+
+.sparkle1 { top: 15%; left: 7%; animation-delay: 0s; }
+.sparkle2 { top: 25%; right: 10%; animation-delay: 0.7s; }
+.sparkle3 { top: 65%; left: 12%; animation-delay: 1.4s; }
+.sparkle4 { top: 75%; right: 18%; animation-delay: 2.1s; }
+.sparkle5 { top: 45%; left: 88%; animation-delay: 2.8s; }
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.6; transform: scale(1.2) rotate(10deg); }
+}
 
 .star1 { top: 10%; left: 5%; animation-delay: 0s; }
 .star2 { top: 20%; right: 8%; animation-delay: 0.5s; }
