@@ -83,3 +83,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize video thumbnails
+    console.log('Personal Development page initialized successfully!');
+}); // <-- This closing bracket was missing
