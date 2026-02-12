@@ -1,4 +1,10 @@
-/* Viducation Personal Development - PURPLE THEME - Organized */
+/* Viducation Personal Development - PURPLE THEME - Organized - COMPLETELY FIXED */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .viducation-header {
     background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
     backdrop-filter: blur(10px);
@@ -84,6 +90,10 @@
     padding: 40px 20px;
     background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
     min-height: calc(100vh - 140px);
+    position: relative;
+    display: flow-root;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Hero Section */
@@ -241,13 +251,31 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Flexible Video Gallery Styles */
+/* FIXED: Video Gallery Styles - Clean grid with no last row issues */
 .video-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin: 50px 0;
     padding: 20px 0;
+}
+
+/* Explicit column controls at breakpoints - FIXED */
+@media (min-width: 1200px) {
+    .video-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .video-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 899px) {
+    .video-gallery {
+        grid-template-columns: 1fr;
+    }
 }
 
 .video-card {
@@ -259,6 +287,9 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .video-card:hover {
@@ -363,6 +394,7 @@
 .video-info {
     padding: 25px;
     background: white;
+    flex-grow: 1;
 }
 
 .video-title {
@@ -414,9 +446,10 @@
     border: 1px solid #CE93D8;
 }
 
-/* Training Features */
+/* Training Features - FIXED spacing */
 .training-features {
     margin-top: 60px;
+    margin-bottom: 0;
     padding: 40px;
     background: linear-gradient(135deg, #E1BEE7 0%, #CE93D8 100%);
     border-radius: 20px;
@@ -479,13 +512,16 @@
     line-height: 1.5;
 }
 
-/* Footer */
+/* Footer - FIXED positioning */
 .callcenter-footer {
     background: linear-gradient(135deg, #9C27B0 0%, #8E24AA 100%);
     color: white;
     padding: 40px 20px;
-    margin-top: 60px;
+    margin-top: 0;
     border-top: 3px solid #7B1FA2;
+    position: relative;
+    width: 100%;
+    clear: both;
 }
 
 .footer-content {
@@ -647,6 +683,11 @@ body.viducation-page {
     background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 50%, #CE93D8 100%);
     color: #6A1B9A;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* Purple scrollbar */
@@ -754,13 +795,15 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     to { opacity: 1; }
 }
 
-/* Responsive Design */
+/* Clear fix for any floating issues */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* FIXED: Responsive Design with no gaps or overflow issues */
 @media (max-width: 1200px) {
-    .video-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-    }
-    
     .features-grid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
@@ -777,11 +820,6 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     
     .hero-title {
         font-size: 2rem;
-    }
-    
-    .video-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
     }
     
     .stats-container {
@@ -814,6 +852,7 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     
     .hero-section {
         padding: 30px 20px;
+        margin-bottom: 40px;
     }
     
     .hero-title {
@@ -822,6 +861,10 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     
     .hero-description {
         font-size: 1rem;
+    }
+    
+    .section-content {
+        padding: 30px 20px;
     }
     
     .section-title {
@@ -834,12 +877,22 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     }
     
     .video-gallery {
-        grid-template-columns: 1fr;
         gap: 20px;
+        margin: 30px 0;
     }
     
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .training-features {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+    
+    .features-title {
+        font-size: 1.8rem;
     }
     
     .stats-container {
@@ -860,4 +913,28 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     .modal-video-container {
         height: 300px;
     }
+}
+
+/* FIXED: Ensure no horizontal scroll issues */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* FIXED: Container width control */
+.container, 
+.viducation-content,
+.section-content,
+.footer-content,
+.hero-section {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FIXED: Last row video card alignment helper */
+.video-gallery::after {
+    content: "";
+    flex: auto;
 }
