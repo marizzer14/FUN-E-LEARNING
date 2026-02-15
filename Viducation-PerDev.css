@@ -1,4 +1,4 @@
-/* Viducation Personal Development - PURPLE THEME - Organized - COMPLETELY FIXED */
+/* Viducation Personal Development - PURPLE THEME - FIXED */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -251,7 +251,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* FIXED: Video Gallery Styles - Clean grid with no last row issues */
+/* Fixed Video Gallery Styles - Matching Call Center structure */
 .video-gallery {
     display: grid;
     gap: 30px;
@@ -259,7 +259,7 @@
     padding: 20px 0;
 }
 
-/* Explicit column controls at breakpoints - FIXED */
+/* Explicit column controls at breakpoints */
 @media (min-width: 1200px) {
     .video-gallery {
         grid-template-columns: repeat(3, 1fr);
@@ -395,6 +395,8 @@
     padding: 25px;
     background: white;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .video-title {
@@ -408,6 +410,7 @@
 .video-meta {
     display: flex;
     gap: 15px;
+    margin-top: auto;
     margin-bottom: 15px;
 }
 
@@ -446,7 +449,7 @@
     border: 1px solid #CE93D8;
 }
 
-/* Training Features - FIXED spacing */
+/* Training Features - Fixed spacing */
 .training-features {
     margin-top: 60px;
     margin-bottom: 0;
@@ -512,7 +515,7 @@
     line-height: 1.5;
 }
 
-/* Footer - FIXED positioning */
+/* Footer - Fixed positioning */
 .callcenter-footer {
     background: linear-gradient(135deg, #9C27B0 0%, #8E24AA 100%);
     color: white;
@@ -646,26 +649,6 @@
     pointer-events: none;
     animation: twinkle 4s infinite ease-in-out;
 }
-/* Decorative sparkle */
-.decorative-sparkle {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 1.5rem;
-    pointer-events: none;
-    animation: sparkle 3s infinite ease-in-out;
-    z-index: 1;
-}
-
-.sparkle1 { top: 15%; left: 7%; animation-delay: 0s; }
-.sparkle2 { top: 25%; right: 10%; animation-delay: 0.7s; }
-.sparkle3 { top: 65%; left: 12%; animation-delay: 1.4s; }
-.sparkle4 { top: 75%; right: 18%; animation-delay: 2.1s; }
-.sparkle5 { top: 45%; left: 88%; animation-delay: 2.8s; }
-
-@keyframes sparkle {
-    0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
-    50% { opacity: 0.6; transform: scale(1.2) rotate(10deg); }
-}
 
 .star1 { top: 10%; left: 5%; animation-delay: 0s; }
 .star2 { top: 20%; right: 8%; animation-delay: 0.5s; }
@@ -795,14 +778,7 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     to { opacity: 1; }
 }
 
-/* Clear fix for any floating issues */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* FIXED: Responsive Design with no gaps or overflow issues */
+/* Responsive Design */
 @media (max-width: 1200px) {
     .features-grid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -852,7 +828,6 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     
     .hero-section {
         padding: 30px 20px;
-        margin-bottom: 40px;
     }
     
     .hero-title {
@@ -861,10 +836,6 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     
     .hero-description {
         font-size: 1rem;
-    }
-    
-    .section-content {
-        padding: 30px 20px;
     }
     
     .section-title {
@@ -883,7 +854,6 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
     
     .training-features {
@@ -915,13 +885,13 @@ body.viducation-page::-webkit-scrollbar-thumb:hover {
     }
 }
 
-/* FIXED: Ensure no horizontal scroll issues */
+/* Ensure no horizontal scroll issues */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
 
-/* FIXED: Container width control */
+/* Container width control */
 .container, 
 .viducation-content,
 .section-content,
@@ -931,10 +901,4 @@ html, body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* FIXED: Last row video card alignment helper */
-.video-gallery::after {
-    content: "";
-    flex: auto;
 }
