@@ -2604,27 +2604,72 @@ body.scrolled .interactive-bg .bg-circle6 { transform: translateY(-10px) scale(1
 
 
 /* Fun-E-Xam Coming Soon Section */
-.fun-e-exam-section {
-    padding: 80px 0;
-    text-align: center;
+/* Fun-E-Xam Section Styles */
+.fun-exam-container {
+    padding: 40px 0 60px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.coming-soon-container {
-    background: linear-gradient(135deg, #fff 0%, #f8fbff 100%);
-    border-radius: 30px;
-    padding: 60px 40px;
-    box-shadow: 0 10px 40px rgba(25, 118, 210, 0.12), 
-                0 2px 20px rgba(25, 118, 210, 0.08),
-                inset 0 0 0 3px #e3f2fd;
-    border: 2px solid #90caf9;
-    max-width: 800px;
-    margin: 0 auto;
+.fun-exam-main-title {
+    font-size: 2.8rem;
+    color: #1565c0;
+    font-weight: 800;
+    text-align: center;
+    margin: 0 auto 50px auto;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+    transform: none;
+}
+
+.fun-exam-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #1976d2, #42a5f5, #1976d2);
+    border-radius: 2px;
+}
+
+.fun-exam-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.fun-exam-card {
+    background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+    border-radius: 24px;
+    padding: 40px 35px;
+    box-shadow: 0 15px 35px rgba(25, 118, 210, 0.15);
+    border: 2px solid #e3f2fd;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    margin: 0 auto;
 }
 
-.coming-soon-container::before {
-    content: "";
+.fun-exam-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(25, 118, 210, 0.2);
+    border-color: #90caf9;
+}
+
+.fun-exam-card::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -2634,159 +2679,338 @@ body.scrolled .interactive-bg .bg-circle6 { transform: translateY(-10px) scale(1
     z-index: 1;
 }
 
-.coming-soon-container::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(144, 202, 249, 0.1) 0%, transparent 70%);
-    z-index: 0;
-    animation: pulse 4s ease-in-out infinite;
+.fun-exam-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.1; }
-    50% { transform: scale(1.05); opacity: 0.15; }
-}
-
-.coming-soon-icon-wrapper {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 30px auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #1976d2, #f54842, #96f542);
-    border-radius: 50%;
+.fun-exam-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
-    position: relative;
-    z-index: 2;
-    animation: floatIcon 3s ease-in-out infinite;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 25px rgba(25, 118, 210, 0.3);
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
 }
 
-@keyframes floatIcon {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(5deg); }
+.fun-exam-card:hover .fun-exam-icon-wrapper {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 20px 35px rgba(25, 118, 210, 0.4);
 }
 
-.coming-soon-icon {
+.fun-exam-icon {
+    font-size: 4rem;
+    line-height: 1;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+}
+
+.fun-exam-card-title {
+    font-size: 2rem;
+    color: #1976d2;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.fun-exam-card-desc {
+    color: #555;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.gform-features {
+    width: 100%;
+    margin: 20px 0 30px;
+    padding: 25px;
+    background: rgba(227, 242, 253, 0.5);
+    border-radius: 20px;
+}
+
+.gform-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #333;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.gform-feature:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.feature-icon {
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 1.3rem;
+    min-width: 24px;
+}
+
+.gform-action {
+    margin: 20px 0 20px;
+    width: 100%;
+}
+
+.gform-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.fun-exam-card:hover .gform-btn {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(25, 118, 210, 0.4);
+    background: linear-gradient(135deg, #1565c0, #1976d2);
+}
+
+.btn-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.fun-exam-card:hover .btn-arrow {
+    transform: translateX(8px);
+}
+
+.gform-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.95rem;
+    background: rgba(0,0,0,0.02);
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.note-icon {
+    color: #1976d2;
+    font-size: 1.2rem;
+}
+
+/* Info Banner Styles */
+.fun-exam-info-banner {
+    margin: 60px 20px 20px;
+    background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+    border-radius: 20px;
+    padding: 25px 30px;
+    border: 2px solid #e3f2fd;
+    box-shadow: 0 8px 25px rgba(25, 118, 210, 0.08);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-icon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
     width: 60px;
     height: 60px;
-    filter: brightness(0) invert(1);
-    object-fit: contain;
-}
-
-.coming-soon-title {
-    font-size: 2.5rem;
-    color: #1976d2;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 2;
-    text-shadow: 0 2px 10px rgba(144, 202, 249, 0.3);
-    animation: glowText 2s ease-in-out infinite;
-}
-
-@keyframes glowText {
-    0%, 100% { text-shadow: 0 2px 10px rgba(144, 202, 249, 0.3); }
-    50% { text-shadow: 0 2px 20px rgba(144, 202, 249, 0.5), 0 0 30px rgba(144, 202, 249, 0.3); }
-}
-
-.coming-soon-desc {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    border: 1px solid #e3f2fd;
-}
-
-/* Add some decorative elements */
-.coming-soon-container .decoration {
-    position: absolute;
-    width: 50px;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    background: linear-gradient(135deg, #42a5f5, #1976d2);
-    opacity: 0.1;
-    z-index: 1;
+    color: white;
 }
 
-.coming-soon-container .decoration:nth-child(1) {
-    top: 20px;
-    left: 20px;
-    animation: bounce 4s ease-in-out infinite;
+.info-banner-content p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
 }
 
-.coming-soon-container .decoration:nth-child(2) {
-    bottom: 20px;
-    right: 20px;
-    animation: bounce 4s ease-in-out infinite reverse;
+/* Link Styles */
+.gform-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-15px) scale(1.1); }
+.gform-link:hover {
+    text-decoration: none;
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .fun-exam-main-title {
+        font-size: 2.4rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .fun-e-exam-section {
-        padding: 40px 0;
-    }
-    
-    .coming-soon-container {
-        padding: 40px 20px;
-        margin: 0 15px;
-    }
-    
-    .coming-soon-title {
+    .fun-exam-main-title {
         font-size: 2rem;
+        margin-bottom: 40px;
     }
     
-    .coming-soon-desc {
-        font-size: 1.1rem;
-        padding: 15px;
-    }
-    
-    .coming-soon-icon-wrapper {
+    .fun-exam-main-title::after {
         width: 80px;
-        height: 80px;
-        padding: 15px;
     }
     
-    .coming-soon-icon {
+    .fun-exam-card {
+        padding: 30px 25px;
+        min-height: auto;
+    }
+    
+    .fun-exam-icon-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .fun-exam-icon {
+        font-size: 3.5rem;
+    }
+    
+    .fun-exam-card-title {
+        font-size: 1.8rem;
+    }
+    
+    .fun-exam-card-desc {
+        font-size: 1.1rem;
+    }
+    
+    .gform-features {
+        padding: 20px;
+    }
+    
+    .gform-feature {
+        font-size: 1rem;
+    }
+    
+    .gform-btn {
+        padding: 15px 35px;
+        font-size: 1.2rem;
+        max-width: 260px;
+    }
+    
+    .info-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .info-icon {
         width: 50px;
         height: 50px;
+        font-size: 1.8rem;
+    }
+    
+    .info-banner-content p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .coming-soon-title {
+    .fun-exam-main-title {
         font-size: 1.8rem;
+        margin-bottom: 30px;
     }
     
-    .coming-soon-desc {
+    .fun-exam-main-title::after {
+        width: 60px;
+        bottom: -10px;
+    }
+    
+    .fun-exam-card {
+        padding: 25px 20px;
+    }
+    
+    .fun-exam-icon-wrapper {
+        width: 90px;
+        height: 90px;
+        border-radius: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .fun-exam-icon {
+        font-size: 3rem;
+    }
+    
+    .fun-exam-card-title {
+        font-size: 1.6rem;
+    }
+    
+    .fun-exam-card-desc {
         font-size: 1rem;
+        margin-bottom: 20px;
+        padding: 0 5px;
     }
-}
-}
-
-@media (max-width: 600px) {
-    .main-container {
-        padding: 0 6px;
+    
+    .gform-features {
+        padding: 15px;
+        margin: 15px 0 20px;
     }
-    .footer-content {
-        padding: 0 6px;
+    
+    .gform-feature {
+        font-size: 0.95rem;
+        padding: 6px 8px;
+        gap: 8px;
+    }
+    
+    .feature-icon {
+        font-size: 1.1rem;
+        min-width: 20px;
+    }
+    
+    .gform-btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        max-width: 220px;
+    }
+    
+    .btn-arrow {
+        font-size: 1.3rem;
+    }
+    
+    .gform-note {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+    
+    .fun-exam-info-banner {
+        padding: 20px 15px;
+        margin: 40px 10px 20px;
     }
 }
 
